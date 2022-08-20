@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="theme-color" content="#08C">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Arch Linux{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static "archweb.css" %}" media="screen" />
     <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}" />
@@ -18,6 +19,9 @@
 <body class="{% if user.is_authenticated %}devmode {% endif %}{% block bodyclass %}{% endblock %}">
     <div id="archnavbar" class="{% block navbarclass %}anb-home{% endblock %}">
         <div id="archnavbarlogo"><h1><a href="/" title="Return to the main page">Arch Linux</a></h1></div>
+          <div id="mobilemenu">
+            <span>Menu</span>
+          </div>
         <div id="archnavbarmenu">
             <ul id="archnavbarlist">
                 <li id="anb-home"><a href="/" title="Arch news, packages, projects and more">Home</a></li>
