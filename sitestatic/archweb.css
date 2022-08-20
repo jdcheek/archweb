@@ -36,8 +36,12 @@
 
 
 /* mobile/tablet */ 
+#mobilemenubtn {
+  cursor: pointer;
+}
+
 @media (min-width: 880px) {
-  #mobilemenu {
+  #mobilemenubtn {
     display: none;
   }
 }
@@ -49,6 +53,7 @@
     align-items: center;
     padding: 10px 5px !important;
    } 
+
 
   #archnavbarmenu {
     position: absolute;
@@ -63,14 +68,21 @@
   #archnavbarlist {
     display: flex !important;
     flex-direction: column;
+    text-align: center !important;
   }
 
+   #archnavbarlist > li > a {
+     display: inline-block;
+   }
+   
   #archnavbarlogo {
     background: url('archnavbar/archicon.svg') no-repeat !important;
     width: 40px !important;
     height: 40px !important;
     background-size: cover !important;
   }
+
+  
 }
 
 
