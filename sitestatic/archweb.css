@@ -13,7 +13,7 @@
  */
 
 /* container for the entire bar */
-#archnavbar { min-height: 40px !important; padding: 10px 15px !important; background: #333 !important; border-bottom: 5px #08c solid !important; }
+#archnavbar { min-height: 40px; padding: 10px 15px !important; background: #333 !important; border-bottom: 5px #08c solid !important; }
 #archnavbarlogo { float: left !important; margin: 0 !important; padding: 0 !important; height: 40px !important; width: 190px !important; background: url('archnavbar/archlogo.png') no-repeat !important; }
 @media (-webkit-min-device-pixel-ratio: 1.2), (min--moz-device-pixel-ratio: 1.2), (-o-min-device-pixel-ratio: 2/1) {
 	#archnavbarlogo { float: left !important; margin: 0 !important; padding: 0 !important; height: 40px !important; width: 190px !important; background: url(archnavbar/archlogo.svg) no-repeat !important;background-size:100% !important;
@@ -34,6 +34,46 @@
 #archnavbarlist li a { color: #999; font-weight: bold !important; text-decoration: none !important; }
 #archnavbarlist li a:hover { color: white !important; text-decoration: underline !important; }
 
+
+/* mobile/tablet */ 
+@media (min-width: 880px) {
+  #mobilemenu {
+    display: none;
+  }
+}
+
+@media (max-width: 879px) {
+  #archnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px !important;
+   } 
+
+  #archnavbarmenu {
+    position: absolute;
+    top: 55px;
+    right: 0px;
+    width: 160px;
+    height: 280px;
+    background-color: #333333;
+    z-index: 1000;
+  }
+  
+  #archnavbarlist {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  #archnavbarlogo {
+    background: url('archnavbar/archicon.svg') no-repeat !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-size: cover !important;
+  }
+}
+
+
 /* END ARCH GLOBAL NAVBAR */
 
 /* simple reset */
@@ -45,7 +85,7 @@
 
 /* general styling */
 body {
-    min-width: 650px;
+    /* min-width: 650px; this breaks mobile */
     background: #f6f9fc;
     color: #222;
     font: normal 100% sans-serif;
@@ -62,9 +102,10 @@ ul {
     padding-left: 2em;
 }
 
-    ul {
-        list-style: square;
-    }
+  ul {
+      list-style: square;
+      word-wrap: break-word;
+  }
 
 code {
     font-family: monospace, monospace;
