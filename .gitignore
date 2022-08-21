@@ -20,5 +20,5 @@ htmlcov
 
 # coverage
 .coverage
-.run-server.sh
+run-server.sh
 
