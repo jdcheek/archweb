@@ -387,3 +387,5 @@ function collapseNotes(elements) {
         });
     });
 }
+ 
+
