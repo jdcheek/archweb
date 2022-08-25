@@ -3,7 +3,12 @@
 (function() {
   const input = document.getElementById('pkgsearch-field');
   const form = document.getElementById('pkgsearch-form');
+  const menu = document.getElementById('hamburgericon');
   var list;
+
+  function toggleMobileMenu() {
+    menu.classList.toggle('open');
+  }
 
   function resetResults() {
     if (!list) return;
@@ -128,6 +133,7 @@
     };
   }
 
+  menu.addEventListener("click", toggleMobileMenu);
   input.addEventListener("input", onInputClick);
   input.addEventListener("keydown", onKeyDown);
   window.addEventListener('resize', debounce(setListLocation, 150));
